@@ -1,3 +1,4 @@
+![RRSSMTP Logo](assets/img/rrssmtp-logo.webp)
 # Really Really Simple SMTP
 
 ## Description

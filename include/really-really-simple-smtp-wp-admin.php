@@ -269,7 +269,7 @@ function rrs_smtp_options_page()
             Really Really Simple SMTP</h2>
         <br>
 
-        <a href="https://github.com/LLouzada/Really-Really-Simple-SMTP"><img src="<?php echo plugins_url('assets/img/loumad-logo.png', __FILE__); ?>" alt="Logo Loumad Soft" width="150"></a>
+        <a href="https://github.com/LLouzada/Really-Really-Simple-SMTP"><img src="<?php echo plugins_url('assets/img/rrssmtp-logo.webp', __FILE__); ?>" alt="Logo Loumad Soft" width="150"></a>
         <br>
 
         <?php
