@@ -8,6 +8,11 @@
  * @since 1.1
  */
 
+ // Caso acessado diretamente, aborta
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 /** 
  * Alerta no painel de admin que a versão do PHP é menor que 5.4 e que existem plugins melhores disponíveis
  *
@@ -16,7 +21,7 @@
  */
 function rrs_smtp_php_version_notice()
 {
-    echo '<div class="error"><p>' . __('The Really Really Simple SMTP Plugin was designed to meet the need for compatibility with PHP versions lower than 5.4. The current PHP version is ' . PHP_VERSION . ' and there are better plugins available!', 'really-really-simple-smtp') . '</p></div>';
+    echo '<div class="notice notice-error is-dismissible"><p>' . __('The Really Really Simple SMTP Plugin was designed to meet the need for compatibility with PHP versions lower than 5.4. The current PHP version is ' . PHP_VERSION . ' and there are better plugins available!', 'really-really-simple-smtp') . '</p></div>';
 }
 
 /**
@@ -220,7 +225,7 @@ function rrs_smtp_from_email_render()
     $options = get_option('rrs_smtp_settings');
     $fromEmail = isset($options['rrs_smtp_from_email']) ? $options['rrs_smtp_from_email'] : '';
 ?>
-    <input type='text' name='rrs_smtp_settings[rrs_smtp_from_email]' value='<?php echo $fromEmail; ?>' placeholder="Usually the same as SMTP username">
+    <input type='text' name='rrs_smtp_settings[rrs_smtp_from_email]' value='<?php echo $fromEmail; ?>' placeholder="same as SMTP user">
 <?php
 }
 
@@ -274,16 +279,17 @@ function rrs_smtp_options_page()
         ?>
     </form>
     <hr>
-    <h2><?php __('Send Test Email', 'wordpress'); ?></h2>
+    <h2>Send Test Email</h2>
     <form method="post" action="">
         <input type="text" name="test_email" placeholder="Digite um e-mail para testar" />
-        <?php submit_button('Enviar E-mail de Teste'); ?>
+        <?php submit_button(__('Send Test Email', 'wordpress')); ?>
     </form>
+    <?php
+    if (isset($_POST['test_email']) && !empty($_POST['test_email'])) {
+        rrs_smtp_send_test_email($_POST['test_email']);
+    } ?>
     <hr>
     <h2>Sobre o Plugin</h2>
 
 <?php
-    if (isset($_POST['test_email']) && !empty($_POST['test_email'])) {
-        rrs_smtp_send_test_email($_POST['test_email']);
-    }
 }

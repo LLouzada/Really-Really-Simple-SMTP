@@ -9,10 +9,6 @@
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// todo - adicionar opção de ativar / desativar debug do plugin (maybe)
-error_reporting(E_ERROR | E_WARNING | E_PARSE | E_STRICT);
-ini_set("display_errors", "1");
-
 // Caso acessado diretamente, aborta
 if (!defined('ABSPATH')) {
     exit;
@@ -38,5 +34,11 @@ require_once(RRS_SMTP_PLUGIN_DIR . 'include/really-really-simple-smtp-wp-admin.p
 add_action('admin_menu', 'rrs_smtp_add_admin_menu');
 add_action('admin_init', 'rrs_smtp_settings_init');
 
-// Adiciona nossa função personalizada ao hook 'phpmailer_init'
+// Adiciona nossa função personalizada ao hook 'wp_mail_from' para substituir o endereço de e-mail de remetente
+add_filter('wp_mail_from', 'rrs_wp_mail_from');
+
+// Adiciona nossa função personalizada ao hook 'phpmailer_init' para configurar o PHPMailer
 add_action('phpmailer_init', 'rrs_smtp_phpmailer');
+
+// Adiciona nossa função personalizada ao hook 'wp_mail_failed' para registrar erros de envio de e-mail
+add_action('wp_mail_failed', 'rrs_smtp_mail_failed');

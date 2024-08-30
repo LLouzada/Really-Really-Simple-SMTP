@@ -7,6 +7,11 @@
  * @since 1.1
  */
 
+ // Caso acessado diretamente, aborta
+if (!defined('ABSPATH')) {
+    exit;
+}
+
  /**
   * Função personalizada para substituir o endereço de e-mail de origem no WordPress
   *
@@ -68,9 +73,19 @@ function rrs_smtp_send_test_email($to_email)
     if (wp_mail($to_email, $subject, $message, $headers)) {
         echo '<div class="notice notice-success is-dismissible"><p>E-mail enviado com sucesso!</p></div>';
     } else {
-        echo '<div class="notice notice-error is-dismissible"><p>Falha ao enviar o e-mail.</p></div>';
-        echo '<pre>';
-        print_r(error_get_last());
-        echo '</pre>';
+        $notice_message = '<div class="notice notice-error is-dismissible"><p>Falha ao enviar o e-mail.</p></div>';
+        $error = error_get_last();
+        if ($error) {
+            $notice_message .= '<pre>' . print_r($error, true) . '</pre>';
+        }
     }
+
+    // Retorna a mensagem para ser exibida
+    return $notice_message;
+}
+
+function rrs_smtp_mail_failed($error) {
+    error_log( $error->get_error_message() );
+    echo 'Erro ao enviar o e-mail: ';
+    echo '<div class="error"><p>' . $error->get_error_message() . '</p></div>';   
 }
