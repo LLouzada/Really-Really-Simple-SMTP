@@ -12,7 +12,7 @@ This plugin was developed to meet the need for compatibility with PHP 5.3 for le
 
 ## Installation
 
-1. Download the plugin from the WordPress plugin repository or from the (GitHub repository)[https://github.com/llouzada/really-really-simple-smtp].
+1. Download the plugin from the WordPress plugin repository or from the [GitHub repository](https://github.com/llouzada/really-really-simple-smtp).
 2. Upload the plugin folder to the `/wp-content/plugins/` directory.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
