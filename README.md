@@ -3,7 +3,7 @@
 
 ## Description
 
-This plugin was developed to meet the need for compatibility with PHP 5.3 for legacy systems. It is a simple plugin that allows you to configure the SMTP settings for your old WordPress installation. To set up, simply go to the plugin settings page (Configuration -> Really Really Simple SMTP) and fill in the fields with your SMTP settings.
+This WordPress plugin was developed to meet the need for compatibility with PHP 5.3 for legacy systems. It is a simple plugin that allows you to configure the SMTP settings for your old WordPress installation. To set up, simply go to the plugin settings page (Configuration -> Really Really Simple SMTP) and fill in the fields with your SMTP settings.
 
 ## Compatibility
 
