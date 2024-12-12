@@ -1,4 +1,7 @@
-![RRSSMTP Logo](https://github.com/LLouzada/Really-Really-Simple-SMTP/blob/main/include/assets/img/rrssmtp-logo.webp)
+<div align="center">
+  <img src="https://github.com/LLouzada/Really-Really-Simple-SMTP/blob/main/include/assets/img/rrssmtp-logo.webp" width=400">
+</div>
+
 # Really Really Simple SMTP
 
 ## Description
