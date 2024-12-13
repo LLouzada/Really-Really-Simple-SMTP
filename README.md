@@ -44,8 +44,7 @@ Once you have this information, you can configure the plugin by going to the plu
 
 ## License
 
-This plugin is licensed under the GPLv2 or later. See the [GPLv2 license](http://www.gnu.org/licenses/gpl-2.0.html) for more details.
-
+This plugin is licensed under the [MIT License](https://mit-license.org/). See the LICENSE file for more details.
 ## Support
 
 If you need support or have any questions, please open an issue on the [GitHub repository](https://github.com/llouzada/really-really-simple-smtp/issues) or contact me directly at [loumad.soft@gmail.com](mailto:loumad.soft@gmail.com).
@@ -62,3 +61,8 @@ If you need support or have any questions, please open an issue on the [GitHub r
 
 ### 1.0.0
 - Initial release of the plugin.
+
+<div align="center">
+  <h1>Happy Coding 🚀</h1>
+</div>
+
